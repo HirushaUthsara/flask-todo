@@ -1,10 +1,12 @@
 from flask import Flask, render_template, request, redirect, url_for
 from azure.cosmos import CosmosClient, PartitionKey, exceptions
 from azure.identity import DefaultAzureCredential, CredentialUnavailableError, ManagedIdentityCredential
+from flask_cors import CORS
 import uuid
 import os
 
 app = Flask(__name__)
+CORS(app)  # Enable CORS for all routes
 
 # Define the Cosmos DB endpoint and database name
 endpoint = "https://cosmos-ad-test.documents.azure.com:443/"

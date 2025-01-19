@@ -1,3 +1,4 @@
 azure-cosmos
 azure-identity
 Flask
+flask-cors
