@@ -61,3 +61,6 @@ jobs:
             --name ${{ env.AZURE_CONTAINER_APP_NAME }} \
             --resource-group ${{ env.RESOURCE_GROUP }} \
             --image ${{ env.ACR_NAME }}.azurecr.io/${{ env.REPO }}:${{ github.sha }}
+
+
+            
