@@ -41,7 +41,7 @@ jobs:
           registryPassword: ${{ secrets.TODOBACKEND_REGISTRY_PASSWORD }}
           containerAppName: todo-backend
           resourceGroup: AD-Integration-Test
-          imageToBuild: adintegrationtest.azurecr.io/todo-backend:${{ github.sha }}
+          imageToBuild: adintegrationtest.azurecr.io/todo-backend:latest
           _buildArgumentsKey_: |
             _buildArgumentsValues_
 
