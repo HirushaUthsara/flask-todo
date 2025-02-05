@@ -2,14 +2,18 @@ from flask import Flask, jsonify, request
 from azure.cosmos import CosmosClient, PartitionKey, exceptions
 from azure.identity import DefaultAzureCredential, CredentialUnavailableError
 from flask_cors import CORS
+from dotenv import load_dotenv
 import uuid
 import os
+
+# Load environment variables from .env file
+load_dotenv()
 
 app = Flask(__name__)
 CORS(app)  # Enable CORS for all routes
 
 # Define the Cosmos DB endpoint and database name
-endpoint = "https://cosmos-ad-test.documents.azure.com:443/"
+endpoint = os.getenv("COSMOS_DB_ENDPOINT")
 DATABASE_NAME = "todo-db"
 CONTAINER_NAME = "todo-container"
 
